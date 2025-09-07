@@ -17,10 +17,7 @@ RUN go mod download
 COPY . .
 
 # Build the application
-RUN ls -la
-RUN ls -la cmd/
-RUN find . -name "*.go" -type f
-RUN CGO_ENABLED=0 GOOS=linux go build -v -a -installsuffix cgo -o dgi-service cmd/dgi-service/main.go
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o dgi-service cmd/dgi-service/main.go
 
 # Final stage
 FROM alpine:latest
