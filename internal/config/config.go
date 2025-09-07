@@ -127,12 +127,12 @@ func Load() (*Config, error) {
 			BaseURL: getEnv("SERVER_BASE_URL", "http://localhost:8081"),
 		},
 		Database: DatabaseConfig{
-			Host:     getEnv("DB_HOST", "localhost"),
-			Port:     getEnv("DB_PORT", "5432"),
-			User:     getEnv("DB_USER", "postgres"),
-			Password: getEnv("DB_PASSWORD", "postgres"),
-			Name:     getEnv("DB_NAME", "dgi_service"),
-			SSLMode:  getEnv("DB_SSLMODE", "disable"),
+			Host:     getEnv("PGHOST", "localhost"),
+			Port:     getEnv("PGPORT", "5432"),
+			User:     getEnv("PGUSER", "postgres"),
+			Password: getEnv("PGPASSWORD", "postgres"),
+			Name:     getEnv("PGDATABASE", "railway"),
+			SSLMode:  getEnv("DB_SSLMODE", "require"),
 		},
 		Redis: RedisConfig{
 			Host:     getEnv("REDIS_HOST", "localhost"),
